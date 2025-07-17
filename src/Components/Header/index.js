@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
 import CountryDropdown from '../CountryDropdown';
@@ -7,8 +7,12 @@ import { FaRegUser } from "react-icons/fa6";
 import { BsHandbag } from "react-icons/bs";
 import SearchBox from './SearchBox';
 import Navigation from './Navigation';
+import { MyContext } from '../../App';
 
 const Header = () => {
+
+const context = useContext(MyContext);
+
   return (
     <>
     <div className="headerWrapper">
@@ -17,7 +21,7 @@ const Header = () => {
                 <p className='mb-0 mt-0 text-center'>Due to the <b>COVID 19</b>  epidemic, orders may be processed with a slight delay</p>
             </div>
         </div> 
-        <header className='header'>
+        <header className='header'>t
             <div className='container'>
                 <div className='row'>
                     <div className='logoWrapper d-flex align-items-center col-sm-2'>
@@ -25,7 +29,10 @@ const Header = () => {
                     </div>
 
                     <div className='col-sm-10 d-flex align-items-center part2'>
-                        <CountryDropdown/>
+                        {
+                            context.countryList.length!==0 && <CountryDropdown/>
+                        }
+                        
 
                         <SearchBox/>
 
