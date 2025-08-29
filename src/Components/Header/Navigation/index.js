@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { IoIosMenu } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa";
@@ -6,16 +6,39 @@ import { Link } from 'react-router-dom';
 import { CiHome } from "react-icons/ci";
 
 const Navigation = () => {
+
+    const [isOpenSidebarVal, setIsOpenSidebarVal] = useState(false);
   return (
      <nav>
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-2 navPart1'>
-                        <Button className='allCatTab align-items-center'>
+                       <div className='catWrapper'>
+                         <Button className='allCatTab align-items-center' onClick={()=>setIsOpenSidebarVal(!isOpenSidebarVal)}>
                             <span className='icon1 mr-2'><IoIosMenu /></span>
                             <span className='text'>ALL CATEGORIES</span>
                             <span className='icon2 ml-2'><FaAngleDown /></span>
                         </Button>
+
+                        <div className={`sidebarNav ${isOpenSidebarVal === true ? 'open' : ''}`}>
+                            <ul>
+                                <li>
+                                    <Link to='/'><Button>men</Button></Link> 
+                                    <Link to='/'><Button>women</Button></Link>
+                                    <Link to='/'><Button>Beauty</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                    <Link to='/'><Button>kids</Button></Link>
+                                    <Link to='/'><Button>gifts</Button></Link>
+                                     <Link to='/'><Button>men</Button></Link> 
+                                    <Link to='/'><Button>women</Button></Link>
+                                    <Link to='/'><Button>Beauty</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                    <Link to='/'><Button>kids</Button></Link>
+                                    <Link to='/'><Button>gifts</Button></Link>
+                                </li>
+                            </ul>
+                        </div>
+                       </div>
                     </div>
 
                      <div className='col-sm-10 navPart2 d-flex align-items-center'>
@@ -24,23 +47,55 @@ const Navigation = () => {
                                 <Link to='/'><Button>Home</Button></Link>
                             </li>
                             <li className='list-inline-item'>
-                                <Link to='/'><Button>Fashion</Button></Link>
+                                <Link to='/'><Button>men</Button></Link>
+                                <div className='submenu shadow'>
+                                    <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                     <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                </div>
                             </li>
                             <li className='list-inline-item'>
-                                <Link to='/'><Button>Electronic</Button></Link>
+                                <Link to='/'><Button>women</Button></Link>
+                                 <div className='submenu shadow'>
+                                    <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                     <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                </div>
                             </li>
                             <li className='list-inline-item'>
-                                <Link to='/'><Button>Bakery</Button></Link>
+                                <Link to='/'><Button>Beauty</Button></Link>
+                                 <div className='submenu shadow'>
+                                    <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                     <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                </div>
                             </li>
                             <li className='list-inline-item'>
-                                <Link to='/'><Button>Grocery</Button></Link>
+                                <Link to='/'><Button>watches</Button></Link>
+                                 <div className='submenu shadow'>
+                                    <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                     <Link to='/'><Button>Clothing</Button></Link>
+                                    <Link to='/'><Button>Footwear</Button></Link>
+                                    <Link to='/'><Button>watches</Button></Link>
+                                </div>
                             </li>
                             <li className='list-inline-item'>
-                                <Link to='/'><Button>Mobiles</Button></Link>
+                                <Link to='/'><Button>kids</Button></Link>
                             </li>
                             
                             <li className='list-inline-item'>
-                                <Link to='/'><Button>Blog</Button></Link>
+                                <Link to='/'><Button>gifts</Button></Link>
                             </li>
                             <li className='list-inline-item'>
                                 <Link to='/'><Button>Contact</Button></Link>
