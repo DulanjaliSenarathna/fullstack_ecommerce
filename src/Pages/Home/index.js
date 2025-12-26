@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 import HomeBanner from '../../Components/HomeBanner'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,6 +11,8 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 import Rating from '@mui/material/Rating';
 import ProductItem from '../../Components/ProductItem';
+import banner1 from '../../assets/images/banner1.png'
+import HomeCat from '../../Components/HomeCat';
 
 const Home = () => {
 
@@ -23,11 +27,17 @@ const Home = () => {
     <>
       <HomeBanner/> 
 
+      <HomeCat/>
+
       <section className='homeProducts'>
         <div className='container'>
           <div className='row'>
             <div className='col-md-3'>
               <div className='banner'>
+                <img src={banner1} className='cursor w-100'/>
+              </div>
+
+              <div className='banner mt-4'>
                 <img src='https://api.spicezgold.com/download/file_1734525757507_NewProject(34).jpg' className='cursor w-100'/>
               </div>
             </div>
@@ -45,12 +55,14 @@ const Home = () => {
                 <Swiper
                   slidesPerView={4}
                   spaceBetween={0}
+                  navigation={true}
                   pagination={{
                     clickable: true,
                   }}
                   modules={[Navigation]}
                   className="mySwiper"
                 >
+                  
                   <SwiperSlide>
                    <ProductItem/>
                   </SwiperSlide>
@@ -87,41 +99,15 @@ const Home = () => {
                 <Button className='viewAllBtn ml-auto'>View All <IoIosArrowRoundForward /> </Button>
               </div>
 
-              <div className='product_row w-100 mt-4'>
-                <Swiper
-                  slidesPerView={4}
-                  spaceBetween={0}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  modules={[Navigation]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>
-                   <ProductItem/>
-                  </SwiperSlide>
-                  
-                   <SwiperSlide>
-                   <ProductItem/>
-                  </SwiperSlide>
-
-                   <SwiperSlide>
-                   <ProductItem/>
-                  </SwiperSlide>
-
-                   <SwiperSlide>
-                   <ProductItem/>
-                  </SwiperSlide>
-
-                   <SwiperSlide>
-                   <ProductItem/>
-                  </SwiperSlide>
-
-                   <SwiperSlide>
-                   <ProductItem/>
-                  </SwiperSlide>
-            
-                </Swiper>
+              <div className='product_row productRow2 w-100 mt-4 d-flex'>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
               </div>
             </div>
           </div>

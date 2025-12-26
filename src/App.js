@@ -5,6 +5,8 @@ import Home from './Pages/Home';
 import Header from './Components/Header';
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import 'font-awesome/css/font-awesome.min.css';
+
 
 const MyContext = createContext();
 

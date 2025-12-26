@@ -441,7 +441,7 @@ nav .navPart2 ul li:hover .submenu{
   color: #000 !important;
   font-family: FontAwesome !important;
   opacity: 0.8;
-}
+} 
 
 .homeBannerSection .slick-arrow.slick-next{
   right: 35px !important;
@@ -451,15 +451,34 @@ nav .navPart2 ul li:hover .submenu{
   left: 35px !important;
 }
 
-.homeBannerSection .slick-arrow.slick-next::before{
-  font-family: FontAwesome !important;
-  color: #fff;
+.slick-next::before{
+  content: '\f105' !important;
 }
 
-.homeBannerSection .slick-arrow.slick-prev::before{
-  font-family: FontAwesome !important;
-  color: #fff;
+.slick-prev::before{
+  content: '\f104' !important;
 }
+
+.homeCat .container .slick-arrow{
+  position: absolute;
+  top: 45%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  background: #fff;
+  border-radius: 100%;
+  font-family: FontAwesome !important;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0 0 0 / 12%), 0 1px 2px rgba(0 0 0 / 24%) !important;
+}
+
+.homeBannerSection{
+  cursor: pointer;
+}
+
 
 .homeProducts{
   padding: 25px 0px;
@@ -472,10 +491,13 @@ nav .navPart2 ul li:hover .submenu{
   overflow: hidden;
 }
 
-.productRow .hd{
+.hd{
   font-size: 20px;
   font-weight: 600;
+  text-transform: uppercase;
 }
+
+
 
 .viewAllBtn{
   background: #fff;
@@ -600,6 +622,130 @@ nav .navPart2 ul li:hover .submenu{
 
 .badge-primary{
   background: #2bbef9 !important;
+}
+
+.homeCat .swiper .item{
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.homeCat .swiper .item img{
+  width: 80%;
+}
+
+.homeCat {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.homeCat .container {
+  position: relative;
+}
+
+/* Custom Swiper navigation styled like .slick-arrow */
+ .swiper-button-prev,
+ .swiper-button-next {
+  position: absolute;
+  top: 45%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  background: #fff;
+  border-radius: 100%;
+  font-family: FontAwesome !important;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0 0 0 / 12%), 0 1px 2px rgba(0 0 0 / 24%) !important;
+}
+
+/* Match .slick-arrow colors and opacity */
+ .swiper-button-prev::after,
+ .swiper-button-next::after {
+  color: #000 !important;
+  font-family: FontAwesome !important;
+  opacity: 0.8;
+  font-size: 16px;
+}
+
+/* Left arrow (FontAwesome \f104) */
+ .swiper-button-prev::after {
+  content: '\f104' !important;
+}
+
+/* Right arrow (FontAwesome \f105) */
+ .swiper-button-next::after {
+  content: '\f105' !important;
+}
+
+/* Arrow positioning same as .homeBannerSection */
+.homeCat .swiper-button-prev {
+  left: 35px !important;
+}
+
+.homeCat .swiper-button-next {
+  right: 35px !important;
+}
+
+/* Remove default Swiper SVG icons */
+ .swiper-button-prev svg,
+ .swiper-button-next svg {
+  display: none !important;
+}
+
+/* Slide item styling */
+.homeCat .item {
+  text-align: center;
+}
+
+.homeCat .item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.homeCat .item:hover img {
+  transform: scale(1.05);
+}
+
+.homeCat .item h6 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.homeCat .swiper {
+  overflow: inherit !important;
+}
+
+.homeCat .swiper-button-prev, .homeCat .swiper-button-next{
+  top: -30px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.homeCat .swiper-button-prev{
+  right: 68px !important;
+  left: inherit !important;
+}
+
+.homeCat .swiper-button-prev::after, .homeCat .swiper-button-next::after{
+  font-size: 12px !important;
+}
+
+.productRow2{
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.productRow2 .productItem{
+  width: 23%;
+  overflow: hidden;
+  border-right: 1px solid rgba(0,0,0,0.1) !important;
 }
 
 @media (min-width:1300px){
